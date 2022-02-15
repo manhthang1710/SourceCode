@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Ve {
+public class Ve implements Serializable{
 	private int maVe;
 	private String loaiVe;
 	public Ve(int maVe, String loaiVe) {
