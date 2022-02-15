@@ -537,11 +537,11 @@ public KhachHang getKhachHangDangChon() {
 		}
 	}
 	}
-	public void openFile(String path) {
+	public void openFile(File file) {
 		ArrayList<KhachHang> ds = new ArrayList<KhachHang>();
 		try {
-			this.model.setTenFile(path);
-			FileInputStream fis = new FileInputStream(path);
+			this.model.setTenFile(file.getAbsolutePath());
+			FileInputStream fis = new FileInputStream(file);
 			ObjectInputStream ois = new ObjectInputStream(fis);
 				
 				KhachHang kh = null;
@@ -555,7 +555,6 @@ public KhachHang getKhachHangDangChon() {
 		}
 		this.model.setDsKhachHang(ds);
 	}
-	
 	public void thucHienOpenFile() {
 		JFileChooser fc = new JFileChooser();
 		int returnVal = fc.showOpenDialog(this);
